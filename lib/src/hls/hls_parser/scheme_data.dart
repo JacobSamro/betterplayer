@@ -49,10 +49,9 @@ class SchemeData {
   }
 
   @override
-  int get hashCode => hashValues(
-      /*uuid, */
-      licenseServerUrl,
-      mimeType,
-      data,
-      requiresSecureDecryption);
+  int get hashCode =>
+      licenseServerUrl.hashCode ^
+      mimeType.hashCode ^
+      data.hashCode ^
+      requiresSecureDecryption.hashCode;
 }

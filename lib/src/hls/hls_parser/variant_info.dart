@@ -40,7 +40,10 @@ class VariantInfo {
     return false;
   }
 
-  @override
-  int get hashCode => hashValues(
-      bitrate, videoGroupId, audioGroupId, subtitleGroupId, captionGroupId);
+  int get hashCode =>
+      bitrate.hashCode ^
+      videoGroupId.hashCode ^
+      audioGroupId.hashCode ^
+      subtitleGroupId.hashCode ^
+      captionGroupId.hashCode;
 }
